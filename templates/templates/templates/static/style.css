@@ -1,0 +1,13 @@
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Sans", "Yu Gothic", sans-serif; color: #111; }
+.container { max-width: 880px; margin: 32px auto; padding: 0 12px; }
+h1 { font-size: 22px; margin-bottom: 16px; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+.file { display: block; margin-bottom: 12px; }
+.opt { display: flex; gap: 12px; margin: 8px 0 16px; }
+button { padding: 10px 16px; border: 0; background: #1e88e5; color: #fff; border-radius: 8px; cursor: pointer; }
+button:hover { background: #1669b2; }
+.hint { color: #666; font-size: 12px; }
+.list { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.list th, .list td { border: 1px solid #ddd; padding: 8px; }
+.btn, .zip { display: inline-block; padding: 6px 10px; background: #1e88e5; color: #fff; border-radius: 6px; text-decoration: none; }
+.btn:hover, .zip:hover { background: #1669b2; }
