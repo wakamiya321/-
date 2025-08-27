@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+    @page { size: A4; margin: 12mm 10mm; }
+    body { font-family: "Noto Sans CJK JP", "Yu Gothic", sans-serif; font-size: 11pt; }
+    h1 { font-size: 16pt; margin: 0 0 8pt; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #000; vertical-align: top; padding: 6pt; }
+    th { background: #f2f2f2; width: 22%; }
+    .small { font-size: 9pt; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>リスクアセスメント（{{ ra['使用製品名'] }}）</h1>
+  <table>
+    <tr><th>項目</th><th>内容</th></tr>
+    {% set order = ['作業場所','作業日','使用製品名','主な成分','SDSの有無','GHSの分類（区分付き）','リスクレベルの判定','主なリスクの内容','リスク低減措置の検討','作成者','所属会社'] %}
+    {% for k in order %}
+      {% set v = ra[k] %}
+      {% if v is sequence and v is not string %}
+        {% set val = '\n'.join(v) %}
+      {% else %}
+        {% set val = v %}
+      {% endif %}
+      <tr>
+        <th>{{ k }}</th>
+        <td style="white-space: pre-wrap;">{{ val }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <p class="small">※ リスク低減措置は現場作業員が実施可能な範囲に限定しています。</p>
+</body>
+</html>
