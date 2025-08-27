@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDS リスクアセスメント生成</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SDS リスクアセスメント自動生成</h1>
+    <form action="/process" method="post" enctype="multipart/form-data" class="card">
+      <label class="file">
+        <span>PDF（複数可）</span>
+        <input type="file" name="files" accept="application/pdf" multiple required>
+      </label>
+      <div class="opt">
+        <label><input type="checkbox" name="out_xlsx" checked> Excel（A4縦1枚）</label>
+        <label><input type="checkbox" name="out_pdf"> PDF</label>
+      </div>
+      <button type="submit">生成する</button>
+      <p class="hint">※ 文字化けPDFは自動的に日本語OCRで再解析します。</p>
+    </form>
+  </div>
+</body>
+</html>
